@@ -14,7 +14,7 @@
   // === CONFIGURATION SECTION ===
   const promptName = "UTILITY_QADisclosure";  // Replace with your actual prompt name in Five9
   const allowedCallTypes = [           // Call types that should trigger the prompt
-    "INBOUND"
+    "INBOUND",
     "OUTBOUND",
     "MANUAL",
     "PREVIEW"
@@ -83,3 +83,4 @@
     console.log("🚀 Five9 Auto Prompt (Debug) script initialized and ready.");
   });
 })();
+
