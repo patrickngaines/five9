@@ -1,0 +1,634 @@
+/*!
+* jQuery Mobile 1.4.0
+* Git HEAD hash: f09aae0e035d6805e461a7be246d04a0dbc98f69 <> Date: Thu Dec 19 2013 17:34:22 UTC
+* http://jquerymobile.com
+*
+* Copyright 2010, 2013 jQuery Foundation, Inc. and other contributors
+* Released under the MIT license.
+* http://jquery.org/license
+*
+*/html {
+ font-size:100%
+}
+body,
+input,
+select,
+textarea,
+button,
+.ui-btn {
+ font-size:1em;
+ line-height:1.3;
+ font-family:Arial
+}
+legend,
+.ui-input-text input,
+.ui-input-search input {
+ color:inherit;
+ text-shadow:inherit
+}
+.ui-mobile label,
+div.ui-controlgroup-label {
+ font-weight:normal;
+ font-size:16px
+}
+.ui-field-contain {
+ border-bottom-color:#828282;
+ border-bottom-color:rgba(0,0,0,0.15);
+ border-bottom-width:1px;
+ border-bottom-style:solid
+}
+.table-stroke thead th,
+.table-stripe thead th,
+.table-stripe tbody tr:last-child {
+ border-bottom:1px solid #d6d6d6;
+ border-bottom:1px solid rgba(0,0,0,0.1)
+}
+.table-stroke tbody th,
+.table-stroke tbody td {
+ border-bottom:1px solid #e6e6e6;
+ border-bottom:1px solid rgba(0,0,0,0.05)
+}
+.table-stripe.table-stroke tbody tr:last-child th,
+.table-stripe.table-stroke tbody tr:last-child td {
+ border-bottom:0
+}
+.table-stripe tbody tr:nth-child(odd) td,
+.table-stripe tbody tr:nth-child(odd) th {
+ background-color:#eeeeee;
+ background-color:rgba(0,0,0,0.04)
+}
+.ui-btn,
+label.ui-btn {
+ font-weight:bold;
+ border-width:1px;
+ border-style:solid
+}
+.ui-btn:link {
+ text-decoration:none !important
+}
+.ui-btn-active {
+ cursor:pointer
+}
+.ui-corner-all {
+ -webkit-border-radius:95em;
+ border-radius:95em
+}
+.ui-btn-corner-all,
+.ui-btn.ui-corner-all,
+.ui-slider-track.ui-corner-all,
+.ui-flipswitch.ui-corner-all,
+.ui-li-count {
+ -webkit-border-radius:0;
+ border-radius:0
+}
+.ui-btn-icon-notext.ui-btn-corner-all,
+.ui-btn-icon-notext.ui-corner-all {
+ -webkit-border-radius:1em;
+ border-radius:1em
+}
+.ui-btn-corner-all,
+.ui-corner-all {
+ -webkit-background-clip:padding;
+ background-clip:padding-box
+}
+.ui-popup.ui-corner-all>.ui-popup-arrow-guide {
+ left:0;
+ right:0;
+ top:0;
+ bottom:0
+}
+.ui-shadow {
+ -webkit-box-shadow:0 1px 0 rgba(0,0,0,0);
+ -moz-box-shadow:0 1px 0 rgba(0,0,0,0);
+ box-shadow:0 1px 0 rgba(0,0,0,0)
+}
+.ui-shadow-inset {
+ -webkit-box-shadow:inset 0 1px 0 rgba(0,0,0,0);
+ -moz-box-shadow:inset 0 1px 0 rgba(0,0,0,0);
+ box-shadow:inset 0 1px 0 rgba(0,0,0,0)
+}
+.ui-overlay-shadow {
+ -webkit-box-shadow:0 0 12px rgba(0,0,0,0.6);
+ -moz-box-shadow:0 0 12px rgba(0,0,0,0.6);
+ box-shadow:0 0 12px rgba(0,0,0,0.6)
+}
+.ui-btn-icon-left:after,
+.ui-btn-icon-right:after,
+.ui-btn-icon-top:after,
+.ui-btn-icon-bottom:after,
+.ui-btn-icon-notext:after {
+ background-color:black;
+ background-color:rgba(0,0,0,0.3);
+ background-position:center center;
+ background-repeat:no-repeat;
+ -webkit-border-radius:1em;
+ border-radius:1em
+}
+.ui-alt-icon.ui-btn:after,
+.ui-alt-icon .ui-btn:after,
+html .ui-alt-icon.ui-checkbox-off:after,
+html .ui-alt-icon.ui-radio-off:after,
+html .ui-alt-icon .ui-checkbox-off:after,
+html .ui-alt-icon .ui-radio-off:after {
+ background-color:black;
+ background-color:rgba(0,0,0,0.15)
+}
+.ui-nodisc-icon.ui-btn:after,
+.ui-nodisc-icon .ui-btn:after {
+ background-color:transparent
+}
+.ui-shadow-icon.ui-btn:after,
+.ui-shadow-icon .ui-btn:after {
+ -webkit-box-shadow:0 1px 0 rgba(255,255,255,0.3);
+ -moz-box-shadow:0 1px 0 rgba(255,255,255,0.3);
+ box-shadow:0 1px 0 rgba(255,255,255,0.3)
+}
+.ui-btn.ui-checkbox-off:after,
+.ui-btn.ui-checkbox-on:after,
+.ui-btn.ui-radio-off:after,
+.ui-btn.ui-radio-on:after {
+ display:block;
+ width:18px;
+ height:18px;
+ margin:-9px 2px 0 2px
+}
+.ui-checkbox-off:after,
+.ui-btn.ui-radio-off:after {
+ filter:alpha(opacity=30);
+ opacity:.3
+}
+.ui-btn.ui-checkbox-off:after,
+.ui-btn.ui-checkbox-on:after {
+ -webkit-border-radius:.1875em;
+ border-radius:.1875em
+}
+.ui-radio .ui-btn.ui-radio-on:after {
+ background-image:none;
+ background-color:black;
+ width:8px;
+ height:8px;
+ border-width:5px;
+ border-style:solid
+}
+.ui-alt-icon.ui-btn.ui-radio-on:after,
+.ui-alt-icon .ui-btn.ui-radio-on:after {
+ background-color:black
+}
+.ui-icon-loading {
+ background-size:2.875em 2.875em
+}
+.ui-bar-a,
+.ui-page-theme-a .ui-bar-inherit,
+html .ui-bar-a .ui-bar-inherit,
+html .ui-body-a .ui-bar-inherit,
+html body .ui-group-theme-a .ui-bar-inherit {
+ background:black;
+ border-color:black;
+ color:black;
+ text-shadow:0 1px 0 #eeeeee;
+ font-weight:bold
+}
+.ui-bar-a {
+ border-width:1px;
+ border-style:solid
+}
+.ui-overlay-a,
+.ui-page-theme-a,
+.ui-page-theme-a .ui-panel-wrapper {
+ background:#d3d3d3;
+ border-color:black;
+ color:black;
+ text-shadow:0 0 0 #f3f3f3
+}
+.ui-body-a,
+.ui-page-theme-a .ui-body-inherit,
+html .ui-bar-a .ui-body-inherit,
+html .ui-body-a .ui-body-inherit,
+html body .ui-group-theme-a .ui-body-inherit,
+html .ui-panel-page-container-a {
+ background:#e4e4e4;
+ border-color:black;
+ color:black;
+ text-shadow:0 0 0 #f3f3f3
+}
+.ui-body-a {
+ border-width:1px;
+ border-style:solid
+}
+.ui-page-theme-a a,
+html .ui-bar-a a,
+html .ui-body-a a,
+html body .ui-group-theme-a a {
+ color:black;
+ font-weight:bold
+}
+.ui-page-theme-a a:visited,
+html .ui-bar-a a:visited,
+html .ui-body-a a:visited,
+html body .ui-group-theme-a a:visited {
+ color:black
+}
+.ui-page-theme-a a:hover,
+html .ui-bar-a a:hover,
+html .ui-body-a a:hover,
+html body .ui-group-theme-a a:hover {
+ color:black
+}
+.ui-page-theme-a a:active,
+html .ui-bar-a a:active,
+html .ui-body-a a:active,
+html body .ui-group-theme-a a:active {
+ color:black
+}
+.ui-page-theme-a .ui-btn,
+html .ui-bar-a .ui-btn,
+html .ui-body-a .ui-btn,
+html body .ui-group-theme-a .ui-btn,
+html head+body .ui-btn.ui-btn-a,
+.ui-page-theme-a .ui-btn:visited,
+html .ui-bar-a .ui-btn:visited,
+html .ui-body-a .ui-btn:visited,
+html body .ui-group-theme-a .ui-btn:visited,
+html head+body .ui-btn.ui-btn-a:visited {
+ background:black;
+ border-color:black;
+ color:black;
+ text-shadow:0 0 0 #f3f3f3
+}
+.ui-page-theme-a .ui-btn:hover,
+html .ui-bar-a .ui-btn:hover,
+html .ui-body-a .ui-btn:hover,
+html body .ui-group-theme-a .ui-btn:hover,
+html head+body .ui-btn.ui-btn-a:hover {
+ background:black;
+ border-color:black;
+ color:black;
+ text-shadow:0 0 0 #f3f3f3
+}
+.ui-page-theme-a .ui-btn:active,
+html .ui-bar-a .ui-btn:active,
+html .ui-body-a .ui-btn:active,
+html body .ui-group-theme-a .ui-btn:active,
+html head+body .ui-btn.ui-btn-a:active {
+ background:black;
+ border-color:black;
+ color:black;
+ text-shadow:0 0 0 #f3f3f3
+}
+.ui-page-theme-a .ui-btn.ui-btn-active,
+html .ui-bar-a .ui-btn.ui-btn-active,
+html .ui-body-a .ui-btn.ui-btn-active,
+html body .ui-group-theme-a .ui-btn.ui-btn-active,
+html head+body .ui-btn.ui-btn-a.ui-btn-active,
+.ui-page-theme-a .ui-checkbox-on:after,
+html .ui-bar-a .ui-checkbox-on:after,
+html .ui-body-a .ui-checkbox-on:after,
+html body .ui-group-theme-a .ui-checkbox-on:after,
+.ui-btn.ui-checkbox-on.ui-btn-a:after,
+.ui-page-theme-a .ui-flipswitch-active,
+html .ui-bar-a .ui-flipswitch-active,
+html .ui-body-a .ui-flipswitch-active,
+html body .ui-group-theme-a .ui-flipswitch-active,
+html body .ui-flipswitch.ui-bar-a.ui-flipswitch-active,
+.ui-page-theme-a .ui-slider-track .ui-btn-active,
+html .ui-bar-a .ui-slider-track .ui-btn-active,
+html .ui-body-a .ui-slider-track .ui-btn-active,
+html body .ui-group-theme-a .ui-slider-track .ui-btn-active,
+html body div.ui-slider-track.ui-body-a .ui-btn-active {
+ background-color:black;
+ border-color:black;
+ color:#ffffff;
+ text-shadow:0 1px 0 #005599
+}
+.ui-page-theme-a .ui-radio-on:after,
+html .ui-bar-a .ui-radio-on:after,
+html .ui-body-a .ui-radio-on:after,
+html body .ui-group-theme-a .ui-radio-on:after,
+.ui-btn.ui-radio-on.ui-btn-a:after {
+ border-color:black
+}
+.ui-page-theme-a .ui-btn:focus,
+html .ui-bar-a .ui-btn:focus,
+html .ui-body-a .ui-btn:focus,
+html body .ui-group-theme-a .ui-btn:focus,
+html head+body .ui-btn.ui-btn-a:focus,
+.ui-page-theme-a .ui-focus,
+html .ui-bar-a .ui-focus,
+html .ui-body-a .ui-focus,
+html body .ui-group-theme-a .ui-focus,
+html head+body .ui-btn-a.ui-focus,
+html head+body .ui-body-a.ui-focus {
+ -webkit-box-shadow:0 0 12px black;
+ -moz-box-shadow:0 0 12px black;
+ box-shadow:0 0 12px black
+}
+.ui-disabled,
+.ui-state-disabled,
+button[disabled],
+.ui-select .ui-btn.ui-state-disabled {
+ filter:alpha(opacity=30);
+ opacity:.3;
+ cursor:default !important;
+ pointer-events:none
+}
+.ui-btn:focus,
+.ui-btn.ui-focus {
+ outline:0
+}
+.ui-noboxshadow .ui-shadow,
+.ui-noboxshadow .ui-shadow-inset,
+.ui-noboxshadow .ui-overlay-shadow,
+.ui-noboxshadow .ui-shadow-icon.ui-btn:after,
+.ui-noboxshadow .ui-shadow-icon .ui-btn:after,
+.ui-noboxshadow .ui-focus,
+.ui-noboxshadow .ui-btn:focus,
+.ui-noboxshadow input:focus,
+.ui-noboxshadow .ui-panel {
+ -webkit-box-shadow:none !important;
+ -moz-box-shadow:none !important;
+ box-shadow:none !important
+}
+.ui-noboxshadow .ui-btn:focus,
+.ui-noboxshadow .ui-focus {
+ outline-width:1px;
+ outline-style:auto
+}
+body {
+ background-color:white !important
+}
+.ui-overlay-a,
+.ui-page-theme-a,
+.ui-page-theme-a .ui-panel-wrapper {
+ background:transparent;
+ color:#292F33 !important
+}
+.ui-page-theme-a {
+ background:none !important
+}
+.ui-header {
+ border-width:0 !important;
+ background-color:#292F33 !important
+}
+h1.ui-title {
+ background:none;
+ color:#fff !important
+}
+.ui-content>div {
+ color:#292F33 !important
+}
+.ui-popup {
+ background-color:#fff !important;
+ border-color:#292F33 !important;
+ color:#292F33 !important
+}
+.ui-input-text input,
+.ui-input-search input {
+ background-color:#fff !important
+}
+textarea {
+ background:#fff !important;
+ color:#292F33 !important
+}
+.ui-input-text:not(.validation-error),
+textarea:not(.validation-error) {
+ border:1px solid #CCCECE !important
+}
+.ui-input-text:hover:not(.validation-error),
+textarea:hover:not(.validation-error) {
+ border:1px solid #66afe9 !important;
+ outline:0 !important
+}
+.ui-btn.ui-focus,
+.ui-input-text.ui-focus:not(.validation-error),
+textarea:focus:not(.validation-error) {
+ border:1px solid #66afe9 !important;
+ outline:0 !important;
+ box-shadow:inset 0 1px 1px rgba(0,0,0,0.075),0 0 8px rgba(102,175,233,0.6) !important
+}
+select {
+ background-color:#fff
+}
+#profiles-button {
+ background-color:#fff;
+ color:#292F33 !important;
+ border:1px solid #CCCECE !important
+}
+.five9-action-btn {
+ border:1px solid #1E6A91 !important;
+ background-color:#288DC1 !important;
+ color:#fff !important;
+ font-size:25px !important;
+ line-height:.5
+}
+.five9-action-btn:hover:not(disabled) {
+ background-color:#53A4CD !important
+}
+.five9-action-btn:focus:not(disabled) {
+ outline:none;
+ box-shadow:0 0 6px 0 #288DC1 !important
+}
+.five9-accept-btn {
+ border:1px solid #1E6A91 !important;
+ background-color:#288DC1 !important;
+ color:#fff !important
+}
+.five9-accept-btn:hover:not(disabled) {
+ background-color:#53A4CD !important
+}
+.five9-accept-btn:focus:not(disabled) {
+ outline:none;
+ box-shadow:0 0 6px 0 #288DC1 !important
+}
+.five9-confirm-btn {
+ border:1px solid #940B2D !important;
+ background-color:#C50F3C !important;
+ color:#fff !important
+}
+.five9-confirm-btn:hover:not(disabled) {
+ background-color:#D80F49 !important;
+ color:#fff !important
+}
+.five9-confirm-btn:focus:not(disabled) {
+ outline:none;
+ box-shadow:0 0 6px 0 #C50F3C !important
+}
+.five9-cancel-btn,
+.five9-aux-btn {
+ border:1px solid #CCCECE !important;
+ background-color:#fff !important;
+ color:#292F33 !important
+}
+.five9-cancel-btn:hover:not(disabled),
+.five9-aux-btn:hover:not(disabled) {
+ background-color:#F7F8FA !important
+}
+.five9-cancel-btn:focus:not(disabled),
+.five9-aux-btn:focus:not(disabled) {
+ outline:none;
+ box-shadow:0 0 6px 0 #288DC1 !important
+}
+.five9-left-btn,
+.five9-right-btn {
+ color:#fff !important;
+ opacity:.5
+}
+.five9-left-btn:hover:not(disabled),
+.five9-right-btn:hover:not(disabled) {
+ opacity:1
+}
+.five9-left-btn:focus:not(disabled),
+.five9-right-btn:focus:not(disabled) {
+ opacity:1
+}
+.five9-link-btn {
+ color:#288DC1 !important
+}
+.form-control input {
+ color:#292F33 !important
+}
+.form-control>label:not(.validation-error) {
+ color:#515659 !important
+}
+div.inner-container .origin {
+ color:#515659 !important
+}
+div.inner-container .display-time {
+ color:#515659 !important
+}
+div.message-container-agent div.message-container {
+ background-color:#EFF1F4 !important;
+ color:#292F33 !important;
+ box-shadow:0 1px 0 #CCCECE !important
+}
+div.message-container-agent div.message-container a {
+ font-weight:normal !important;
+ color:#288DC1 !important
+}
+div.message-container-client div.message-container {
+ background-color:#288DC1 !important;
+ color:#fff !important;
+ box-shadow:0 1px 0 #1E6A91 !important
+}
+div.message-container-client div.message-container a {
+ font-weight:normal !important;
+ color:#fff !important
+}
+div.typing {
+ color:#7C868D !important
+}
+.chat-content {
+ background:#fff !important
+}
+#conversation-page .ui-footer {
+ border-top:1px solid #CCCECE !important;
+ background:#F7F8FA !important
+}
+#conversation-page .vivr-button {
+ border-top:none !important
+}
+.end-who,
+.end-thank-you {
+ color:#292F33 !important
+}
+#conversation-page #send-button {
+ background:transparent !important;
+ color:#288DC1 !important
+}
+#conversation-page #send-button:focus:not(disabled) {
+ border:1px solid #66afe9 !important;
+ outline:0 !important;
+ box-shadow:inset 0 1px 1px rgba(0,0,0,0.075),0 0 8px rgba(102,175,233,0.6) !important
+}
+#conversation-page #send-button[disabled] {
+ color:#CCCECE !important;
+ opacity:1 !important
+}
+.provider {
+ color:#515659 !important;
+ opacity:.5
+}
+.provider:hover {
+ opacity:1
+}
+.provider-five {
+ color:#003B5D !important;
+ font-weight:bold !important
+}
+.provider-nine {
+ color:#288DC1 !important;
+ font-weight:bold !important
+}
+#conversation-page .vivr-content,
+#conversation-page .vivr-button {
+ background:#F7F8FA !important
+}
+#conversation-page .vivr-content .vivr-menu .vivr-product-item,
+#conversation-page .vivr-content .vivr-menu .vivr-menu-item,
+#conversation-page .end-vivr-container {
+ background:white !important
+}
+#conversation-page .vivr-content .vivr-menu .vivr-transfer-row .vivr-transfer-item {
+ background:white !important;
+ color:#288DC1 !important
+}
+#conversation-page .vivr-content .vivr-menu .vivr-transfer-row .vivr-transfer-item div.vivr-transfer-name {
+ color:#292F33 !important
+}
+#conversation-page .vivr-content .vivr-menu .vivr-transfer-row .vivr-transfer-item div.channel-call {
+ background-image:url("../../images/channels/channel-call-default.png")
+}
+#conversation-page .vivr-content .vivr-menu .vivr-transfer-row .vivr-transfer-item div.channel-callback {
+ background-image:url("../../images/channels/channel-callback-default.png")
+}
+#conversation-page .vivr-content .vivr-menu .vivr-transfer-row .vivr-transfer-item div.channel-chat {
+ background-image:url("../../images/channels/channel-chat-default.png")
+}
+#conversation-page .vivr-content .vivr-menu .vivr-transfer-row .vivr-transfer-item div.channel-email {
+ background-image:url("../../images/channels/channel-email-default.png")
+}
+#conversation-page .vivr-content .vivr-menu .vivr-transfer-row .vivr-transfer-item div.channel-sms {
+ background-image:url("../../images/channels/channel-sms-default.png")
+}
+#conversation-page .vivr-content .vivr-menu .vivr-transfer-row .vivr-transfer-item div.channel-video {
+ background-image:url("../../images/channels/channel-video-default.png")
+}
+.hover-allowed #conversation-page .vivr-content .vivr-menu .vivr-transfer-row .vivr-transfer-item:hover {
+ background:#288DC1 !important;
+ color:white !important
+}
+.hover-allowed #conversation-page .vivr-content .vivr-menu .vivr-transfer-row .vivr-transfer-item:hover div.vivr-transfer-name {
+ color:white !important
+}
+.hover-allowed #conversation-page .vivr-content .vivr-menu .vivr-transfer-row .vivr-transfer-item:hover div.channel-call {
+ background-image:url("../../images/channels/channel-call-hover-default.png")
+}
+.hover-allowed #conversation-page .vivr-content .vivr-menu .vivr-transfer-row .vivr-transfer-item:hover div.channel-callback {
+ background-image:url("../../images/channels/channel-callback-hover-default.png")
+}
+.hover-allowed #conversation-page .vivr-content .vivr-menu .vivr-transfer-row .vivr-transfer-item:hover div.channel-chat {
+ background-image:url("../../images/channels/channel-chat-hover-default.png")
+}
+.hover-allowed #conversation-page .vivr-content .vivr-menu .vivr-transfer-row .vivr-transfer-item:hover div.channel-email {
+ background-image:url("../../images/channels/channel-email-hover-default.png")
+}
+.hover-allowed #conversation-page .vivr-content .vivr-menu .vivr-transfer-row .vivr-transfer-item:hover div.channel-sms {
+ background-image:url("../../images/channels/channel-sms-hover-default.png")
+}
+.hover-allowed #conversation-page .vivr-content .vivr-menu .vivr-transfer-row .vivr-transfer-item:hover div.channel-video {
+ background-image:url("../../images/channels/channel-video-hover-default.png")
+}
+div.typing {
+font-size: 10px !important;
+}
+#question-label::after {
+    content: 'What do you need?';
+    font-size: 14px !important;
+}
+#question-label {
+    font-size: 0px !important;
+}
+/* Add this rule to round the corners of the chat widget */
+.ui-page {
+    border-radius: 90px !important; /* You can adjust this value */
+    overflow: hidden !important;    /* This ensures the inner content is clipped to the rounded shape */
+}
