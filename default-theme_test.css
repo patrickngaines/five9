@@ -628,7 +628,7 @@ font-size: 10px !important;
     font-size: 0px !important;
 }
 /* Add this rule to round the corners of the chat widget */
-.five9-frame {
-    border-radius: 90px !important; /* You can adjust this value */
-    /*overflow: hidden !important;    /* This ensures the inner content is clipped to the rounded shape */
+.ui-page {
+    border-radius: 50px !important; /* You can adjust this value */
+    overflow: hidden !important;    /* This ensures the inner content is clipped to the rounded shape */
 }
